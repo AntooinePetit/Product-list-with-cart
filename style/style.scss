@@ -21,3 +21,47 @@ $rose900: hsl(14, 65%, 9%);
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
+
+// Uniform document
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: $font;
+}
+
+body {
+  background: $rose100;
+}
+
+h1 {
+  font-size: 32px;
+  color: $rose900;
+}
+
+h2 {
+  font-size: 26px;
+  color: $red;
+}
+
+h3 {
+  font-size: $font-size;
+  color: $rose900;
+}
+
+.price-tag {
+  color: $red;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: $rose300;
+}
+
+@mixin button($border, $background, $text){
+  border: 1px solid $border;
+  background: $background;
+  color: $text;
+  padding: 10px 20px;
+}

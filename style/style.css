@@ -8,4 +8,39 @@
   color: hsl(228, 45%, 44%);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  font-family: "Red Hat Text", sans-serif;
+}
+
+body {
+  background: hsl(13, 31%, 94%);
+}
+
+h1 {
+  font-size: 32px;
+  color: hsl(14, 65%, 9%);
+}
+
+h2 {
+  font-size: 26px;
+  color: hsl(14, 86%, 42%);
+}
+
+h3 {
+  font-size: 16px;
+  color: hsl(14, 65%, 9%);
+}
+
+.price-tag {
+  color: hsl(14, 86%, 42%);
+}
+
+.subtitle {
+  font-size: 14px;
+  color: hsl(14, 25%, 72%);
+}
+
 /*# sourceMappingURL=style.css.map */
