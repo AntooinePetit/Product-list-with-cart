@@ -43,4 +43,54 @@ h3 {
   color: hsl(14, 25%, 72%);
 }
 
+img {
+  width: 100%;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 30px;
+  max-width: 1440px;
+  padding: 50px;
+  margin: auto;
+}
+
+#product-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+#product-list article div {
+  position: relative;
+  margin-bottom: 25px;
+}
+#product-list article div .add-button {
+  border: 1px solid hsl(14, 65%, 9%);
+  background: hsl(20, 50%, 98%);
+  color: hsl(14, 65%, 9%);
+  padding: 10px 20px;
+  border-radius: 100000px;
+  display: flex;
+  align-items: center;
+  width: 200px;
+  height: 40px;
+  left: calc(50% - 100px);
+  justify-content: center;
+  bottom: -16px;
+  position: absolute;
+  padding: 0;
+}
+#product-list article div .add-button img {
+  width: 22px;
+  margin-right: 10px;
+}
+#product-list article div > img {
+  border-radius: 10px;
+}
+#product-list article h3 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
 /*# sourceMappingURL=style.css.map */

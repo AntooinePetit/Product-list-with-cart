@@ -59,9 +59,67 @@ h3 {
   color: $rose300;
 }
 
-@mixin button($border, $background, $text){
+img {
+  width: 100%;
+}
+
+@mixin button($border, $background, $text) {
   border: 1px solid $border;
   background: $background;
   color: $text;
   padding: 10px 20px;
+  border-radius: 100000px;
+  display: flex;
+  align-items: center;
+}
+
+// Section
+
+section {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 30px;
+  max-width: 1440px;
+  padding: 50px;
+  margin: auto;
+}
+
+// Product list
+
+#product-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+
+  article {
+    div {
+      position: relative;
+      margin-bottom: 25px;
+
+      .add-button {
+        @include button($rose900, $rose50, $rose900);
+        width: 200px;
+        height: 40px;
+        left: calc(50% - 200px/2);
+        justify-content: center;
+        bottom: -16px;
+        position: absolute;
+        padding: 0;
+
+        img {
+          width: 22px;
+          margin-right: 10px;
+        }
+      }
+
+      > img {
+        border-radius: 10px;
+      }
+    }
+
+    h3{
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+  }
 }
