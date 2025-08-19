@@ -13,6 +13,7 @@
   padding: 0;
   text-decoration: none;
   font-family: "Red Hat Text", sans-serif;
+  transition: all 0.3s ease;
 }
 
 body {
@@ -22,6 +23,7 @@ body {
 h1 {
   font-size: 32px;
   color: hsl(14, 65%, 9%);
+  margin-bottom: 25px;
 }
 
 h2 {
@@ -36,11 +38,12 @@ h3 {
 
 .price-tag {
   color: hsl(14, 86%, 42%);
+  font-weight: 700;
 }
 
 .subtitle {
   font-size: 14px;
-  color: hsl(14, 25%, 72%);
+  color: hsl(12, 20%, 44%);
 }
 
 img {
@@ -65,25 +68,89 @@ section {
   position: relative;
   margin-bottom: 25px;
 }
-#product-list article div .add-button {
-  border: 1px solid hsl(14, 65%, 9%);
-  background: hsl(20, 50%, 98%);
-  color: hsl(14, 65%, 9%);
-  padding: 10px 20px;
-  border-radius: 100000px;
-  display: flex;
-  align-items: center;
+#product-list article div div {
   width: 200px;
   height: 40px;
   left: calc(50% - 100px);
-  justify-content: center;
-  bottom: -16px;
   position: absolute;
+  bottom: -16px;
   padding: 0;
+  margin-bottom: 0;
+}
+#product-list article div .add {
+  border: 1px solid hsl(14, 65%, 9%);
+  background: hsl(20, 50%, 98%);
+  color: hsl(14, 65%, 9%);
+  border-radius: 100000px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#product-list article div .add:hover {
+  border-color: hsl(14, 86%, 42%);
+}
+#product-list article div .in-cart {
+  border: 1px solid hsl(14, 86%, 42%);
+  background: hsl(14, 86%, 42%);
+  color: hsl(20, 50%, 98%);
+  border-radius: 100000px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 180px;
+  padding: 0 10px;
+}
+#product-list article div .add-button {
+  display: flex;
+  border: none;
+  background: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border-radius: 1000px;
+  font-size: 16px;
 }
 #product-list article div .add-button img {
   width: 22px;
   margin-right: 10px;
+}
+#product-list article div .add-button:hover {
+  cursor: pointer;
+  color: hsl(14, 86%, 42%);
+  border-color: hsl(14, 86%, 42%);
+}
+#product-list article div .increment,
+#product-list article div .decrement {
+  background: none;
+  border: 1px solid hsl(20, 50%, 98%);
+  border-radius: 10000px;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  position: relative;
+}
+#product-list article div .increment img,
+#product-list article div .decrement img {
+  max-width: 10px;
+  position: absolute;
+  left: 4px;
+}
+#product-list article div .increment:hover,
+#product-list article div .decrement:hover {
+  cursor: pointer;
+  background-color: hsl(20, 50%, 98%);
+}
+#product-list article div .increment:hover img,
+#product-list article div .decrement:hover img {
+  filter: invert(100%) invert(25%) sepia(98%) saturate(769%) hue-rotate(338deg) brightness(101%) contrast(103%);
+}
+#product-list article div .decrement img {
+  top: 8px;
+}
+#product-list article div .increment img {
+  top: 4px;
 }
 #product-list article div > img {
   border-radius: 10px;
@@ -91,6 +158,23 @@ section {
 #product-list article h3 {
   margin-top: 8px;
   margin-bottom: 8px;
+}
+
+#cart {
+  height: fit-content;
+  padding: 20px;
+  background: hsl(20, 50%, 98%);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#cart > img {
+  max-width: 150px;
+  align-self: center;
+}
+#cart > p {
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

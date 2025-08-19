@@ -29,6 +29,7 @@ $rose900: hsl(14, 65%, 9%);
   padding: 0;
   text-decoration: none;
   font-family: $font;
+  transition: all 0.3s ease;
 }
 
 body {
@@ -38,6 +39,7 @@ body {
 h1 {
   font-size: 32px;
   color: $rose900;
+  margin-bottom: 25px;
 }
 
 h2 {
@@ -52,25 +54,26 @@ h3 {
 
 .price-tag {
   color: $red;
+  font-weight: 700;
 }
 
 .subtitle {
   font-size: 14px;
-  color: $rose300;
+  color: $rose500;
 }
 
 img {
   width: 100%;
 }
 
-@mixin button($border, $background, $text) {
+@mixin button($border, $background, $text, $justify) {
   border: 1px solid $border;
   background: $background;
   color: $text;
-  padding: 10px 20px;
   border-radius: 100000px;
   display: flex;
   align-items: center;
+  justify-content: $justify;
 }
 
 // Section
@@ -96,20 +99,87 @@ section {
       position: relative;
       margin-bottom: 25px;
 
-      .add-button {
-        @include button($rose900, $rose50, $rose900);
+      div {
         width: 200px;
         height: 40px;
-        left: calc(50% - 200px/2);
-        justify-content: center;
-        bottom: -16px;
+        left: calc(50% - 200px / 2);
         position: absolute;
+        bottom: -16px;
         padding: 0;
+        margin-bottom: 0;
+      }
+
+      .add {
+        @include button($rose900, $rose50, $rose900, center);
+
+        &:hover {
+          border-color: $red;
+        }
+      }
+
+      .in-cart {
+        @include button($red, $red, $rose50, space-between);
+        width: 180px;
+        padding: 0 10px;
+      }
+
+      .add-button {
+        display: flex;
+        border: none;
+        background: none;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        border-radius: 1000px;
+        font-size: $font-size;
 
         img {
           width: 22px;
           margin-right: 10px;
         }
+
+        &:hover {
+          cursor: pointer;
+          color: $red;
+          border-color: $red;
+        }
+      }
+
+      .increment,
+      .decrement {
+        background: none;
+        border: 1px solid $rose50;
+        border-radius: 10000px;
+        width: 20px;
+        height: 20px;
+        align-items: center;
+        position: relative;
+
+        img {
+          max-width: 10px;
+          position: absolute;
+          left: 4px;
+        }
+
+        &:hover {
+          cursor: pointer;
+          background-color: $rose50;
+
+          img {
+            filter: invert(100%) invert(25%) sepia(98%) saturate(769%)
+              hue-rotate(338deg) brightness(101%) contrast(103%);
+          }
+        }
+      }
+
+      .decrement img {
+        top: 8px;
+      }
+
+      .increment img {
+        top: 4px;
       }
 
       > img {
@@ -117,9 +187,28 @@ section {
       }
     }
 
-    h3{
+    h3 {
       margin-top: 8px;
       margin-bottom: 8px;
     }
+  }
+}
+
+#cart {
+  height: fit-content;
+  padding: 20px;
+  background: $rose50;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  > img {
+    max-width: 150px;
+    align-self: center;
+  }
+
+  > p {
+    text-align: center;
   }
 }
